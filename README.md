@@ -1,66 +1,141 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Booking Management System
 
-## About Laravel
+This project is developed as part of **Interview Assignment for GYSZ Technologies**.  
+It is a simple **Booking Management Web Application** built using **Laravel 10**, **MySQL**, and **Tailwind CSS**, implementing full **CRUD operations** and **authentication** via **Laravel Breeze**.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 📘 Project Overview
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+The application allows users to:
+- Add new bookings.
+- View all bookings with pagination and search.
+- Edit or delete existing bookings.
+- Filter bookings by name or email.
+- Manage booking statuses such as *Pending*, *Confirmed*, and *Cancelled*.
+- Access the system securely through authentication.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## ⚙️ Tech Stack
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+| Category | Technologies Used |
+|-----------|-------------------|
+| **Backend** | Laravel 10 (PHP Framework) |
+| **Frontend** | Blade Templates with Tailwind CSS |
+| **Database** | MySQL |
+| **Authentication** | Laravel Breeze |
+| **Version Control** | Git & GitHub |
+| **Hosting (Planned)** | AWS EC2 *(skipped due to payment verification issue)* |
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 🧩 Folder Structure
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+```
+booking-app/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   │   └── BookingController.php
+│   │   └── Requests/
+│   │       └── BookingRequest.php
+│   └── Models/
+│       └── Booking.php
+├── database/
+│   └── migrations/
+│       └── xxxx_create_bookings_table.php
+├── resources/
+│   └── views/
+│       └── bookings/
+│           ├── index.blade.php
+│           ├── create.blade.php
+│           └── edit.blade.php
+├── routes/
+│   └── web.php
+└── README.md
+```
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## 🚀 Features Implemented
 
-## Contributing
+✅ User authentication (Login/Register) using Laravel Breeze  
+✅ CRUD operations for bookings  
+✅ Search by name or email  
+✅ Status-based color badges (Pending, Confirmed, Cancelled)  
+✅ Responsive design with Tailwind CSS  
+✅ Pagination for bookings list  
+✅ Validation via Form Request (`BookingRequest`)  
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## 🧠 How to Run Locally
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 1. Clone the Repository
+```bash
+git clone https://github.com/yourusername/booking-app.git
+cd booking-app bash
+```
+### 2. Install Dependencies
+```bash
+composer install
+npm install
+```
+### 3. Copy and Configure Environment File
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+Then open .env and update:
+```bash
+DB_DATABASE=booking_app
+DB_USERNAME=root
+DB_PASSWORD=yourpassword
+```
+### 4. Run Database Migrations
+```bash
+php artisan migrate
+```
+### 5. Build and Run the Project
+```bash
+npm run dev
+php artisan serve
+```
+Then open your browser and visit 👉 http://localhost:80
 
-## Security Vulnerabilities
+## Features
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+User authentication via Laravel Breeze
 
-## License
+Add, edit, view, and delete bookings
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Search bookings by name or email
+
+Status color tags (Pending / Confirmed / Cancelled)
+
+Responsive Tailwind CSS design
+
+Pagination and validation included
+---
+## ⚙️ Tech Stack
+| Layer             | Technology                                            |
+| ----------------- | ----------------------------------------------------- |
+| Backend           | Laravel 10 (PHP Framework)                            |
+| Frontend          | Tailwind CSS                                          |
+| Database          | MySQL                                                 |
+| Authentication    | Laravel Breeze                                        |
+| Version Control   | Git & GitHub                                          |
+| Hosting (Planned) | AWS EC2 *(skipped due to payment verification issue)* |
+
+## 👩‍💻 Test Credentials
+Email: admin@example.com
+Password: password123
+
+## Developer Information
+Name: Sangeetha Lakshmi  
+Course: B.Tech – Computer Science and Engineering  
+College: Achariya College of Engineering Technology  
+Mail: sangeethalachu0@gmail.com  
